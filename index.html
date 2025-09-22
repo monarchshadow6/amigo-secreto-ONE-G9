@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Comic+Neue&family=Fredoka+One&family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video id="videoFondo" autoplay muted loop>
+        <source src="./assets/tu-video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="header-contenido">
+            <h1>🎁 Juego del Amigo Secreto 🎉</h1>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="contenedor-principal">
+            <!-- Panel izquierdo -->
+            <section class="contenedor-izquierdo">
+                <input 
+                    type="text" 
+                    id="entradaNombre" 
+                    placeholder="Ingrese nombre" 
+                    onkeypress="if(event.key === 'Enter') agregarNombre()">
+
+                <div class="botones">
+                    <button onclick="agregarNombre()">Ingresar</button>
+                    <button onclick="sortearAmigo()">Sortear Amigo</button>
+                    <button onclick="sortearParejas()">Sortear Parejas</button>
+                    <button onclick="mostrarHistorial()">Ver Historial</button>
+                    <button onclick="reiniciarLista()">Borrar</button>
+                </div>
+
+                <p id="mensajeSorteo" class="mensaje-sorteo"></p>
+                <p id="mensajeError" class="mensaje-error"></p>
+
+                <!-- Contenedor para historial, oculto por defecto -->
+                <div id="historialSorteos" style="display: none; margin-top: 15px; font-family: var(--fuente-lista); font-size: 18px; color: #333;"></div>
+            </section>
+
+            <!-- Panel derecho -->
+            <section class="contenedor-derecho">
+                <h2>📜 Nombres para sortear</h2>
+                <div class="lista" id="listaNombres"></div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 Monarch. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script y confetti canva-->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="scriptv.js"></script>
+</body>
+</html>
